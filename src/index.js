@@ -2,7 +2,7 @@
 import { fetchBreeds } from './cat-api';
 import { fetchCatByBreed } from './cat-api';
 import SlimSelect from 'slim-select';
-import Notiflix, { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
     select: document.querySelector('.js-breed-select'),
@@ -14,9 +14,9 @@ const IS_HIDDEN = 'is-hidden';
 Notify.init({
     position: 'center-top',
     distance: '70px',
-    timeout: '3000',
+    timeout: 3000,
     cssAnimationStyle: 'zoom',
-    fontFamily: 'Arial, sens-serif',
+    fontFamily: 'Arial, sans-serif',
   });
 
   refs.select.classList.add(IS_HIDDEN);
@@ -30,8 +30,8 @@ Notify.init({
     const selectedCatIndex = event.currentTarget.selectedIndex;
     const selectedId = event.currentTarget[selectedCatIndex].value;
 
-    refs.loader.classList.remove(IS_HIDEN);
-    refs.catsInfo.classList.add(IS_HIDEN);
+    refs.loader.classList.remove(IS_HIDDEN);
+    refs.catsInfo.classList.add(IS_HIDDEN);
     refs.catsInfo.innerHTML = '';
 
     showFetchedCatBreed(selectedId);
