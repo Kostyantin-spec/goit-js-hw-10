@@ -1,8 +1,9 @@
 
 import { fetchBreeds } from './cat-api';
 import { fetchCatByBreed } from './cat-api';
-import SlimSelect from 'slim-select';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import SlimSelect from 'slim-select';
+//import SlimSelect from '@slim-select/vue';
 
 const refs = {
     select: document.querySelector('.js-breed-select'),
